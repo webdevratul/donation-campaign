@@ -10,9 +10,10 @@ const Banner = () => {
         <div>
           <input
             type="text"
-            className="w-[50%] px-2 py-2 border-none outline-none rounded-l-lg"
+            placeholder="Search Here..."
+            className="w-[50%] px-4 py-3  border outline-none rounded-l-lg"
           />
-          <button className="bg-[#FF444A] py-2 px-4 text-white text-bold rounded-r-lg">
+          <button className="bg-[#FF444A] py-3 px-6 text-white text-bold rounded-r-lg">
             Search
           </button>
         </div>

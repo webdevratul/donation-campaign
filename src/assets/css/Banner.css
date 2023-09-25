@@ -3,7 +3,7 @@
   background-image: url(../images/Clothing.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: top top;
   height: 80vh;
   z-index: 0;
   background-attachment: fixed;
