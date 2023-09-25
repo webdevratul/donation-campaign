@@ -6,7 +6,7 @@ const Category = ({ category }) => {
   return (
     <Link to={`/category/${id}`}>
       <div
-        className={`rounded-lg ${category.color_card_bg} cursor-pointer shadow-md`}
+        className={`rounded-lg ${category.color_card_bg} cursor-pointer shadow-md border-2`}
       >
         <img
           className="w-full rounded-t-lg h-[300px]"

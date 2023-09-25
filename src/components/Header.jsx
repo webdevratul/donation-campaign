@@ -21,7 +21,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li className="mr-4 font-bold text-xl">
+          <li className=" font-bold text-xl">
             <NavLink
               to="/donation"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -29,7 +29,7 @@ const Header = () => {
               Donation
             </NavLink>
           </li>
-          <li className="mr-4 font-bold text-xl">
+          <li className="ml-4 font-bold text-xl">
             <NavLink
               to="/statistics"
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
