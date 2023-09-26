@@ -1,11 +1,18 @@
+import { useState } from "react";
 import Banner from "./Banner";
 import Categorylist from "./Categorylist";
 
 const Home = () => {
+  const [data, setData] = useState({});
+
+  const handleButtonClick = (inputValue) => {
+    setData({ ...data, inputValue });
+  };
+
   return (
     <div>
-      <Banner></Banner>
-      <Categorylist></Categorylist>
+      <Banner handleButtonClick={handleButtonClick}></Banner>
+      <Categorylist data={data}></Categorylist>
     </div>
   );
 };

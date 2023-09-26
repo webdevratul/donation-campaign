@@ -1,6 +1,13 @@
+import { useState } from "react";
 import "../assets/css/Banner.css";
 
-const Banner = () => {
+const Banner = ({ handleButtonClick }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div className="banner">
       <div className="banner-content text-center">
@@ -12,8 +19,12 @@ const Banner = () => {
             type="text"
             placeholder="Search Here..."
             className="w-[50%] px-4 py-3  border outline-none rounded-l-lg"
+            onChange={handleInputChange}
           />
-          <button className="bg-[#FF444A] py-3 px-6 text-white text-bold rounded-r-lg">
+          <button
+            onClick={() => handleButtonClick(inputValue)}
+            className="bg-[#FF444A] py-3 px-6 text-white text-bold rounded-r-lg"
+          >
             Search
           </button>
         </div>
