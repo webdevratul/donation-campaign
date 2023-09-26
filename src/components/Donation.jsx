@@ -7,24 +7,31 @@ const Donation = () => {
 
   const [appliedCategroy, setAppliedCategory] = useState([]);
 
+  const [dataLength, setDataLength] = useState(4);
+
   useEffect(() => {
     const storeCategoryIds = getStoredCategories();
 
     if (categories.length > 0) {
-      const category = categories.filter((category) =>
-        storeCategoryIds.includes(category.id)
-      );
-      setAppliedCategory(category);
+      const jobsApplied = [];
+      for (const id of storeCategoryIds) {
+        const job = categories.find((job) => job.id === id);
+        if (job) {
+          jobsApplied.push(job);
+        }
+      }
+      setAppliedCategory(jobsApplied);
     }
   }, [categories]);
 
   return (
     <div>
       <div className="w-[83%] mx-auto mt-52 md:mt-40 mb-10 grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
-        {appliedCategroy.map((category, idx) => (
+        {appliedCategroy.slice(0, dataLength).map((category, idx) => (
           <div
+            style={{ backgroundColor: category.color_card_bg }}
             key={idx}
-            className={`flex items-center ${category.color_card_bg} rounded shadow-xl border-2 pr-2 md:p-0`}
+            className={`flex items-center rounded shadow-xl border-2 pr-2 md:p-0`}
           >
             <div>
               <img
@@ -35,18 +42,23 @@ const Donation = () => {
             </div>
             <div className="ml-4">
               <h1
-                className={`${category.color_category_bg} w-[100px] text-center rounded ${category.color_text_and_button_bg}`}
+                style={{ backgroundColor: category.color_category_bg }}
+                className={`w-[100px] text-center rounded ${category.color_text_and_button_bg}`}
               >
                 {category.category}
               </h1>
               <h2 className="my-3 text-2xl font-bold">
                 Clean water for children
               </h2>
-              <h2 className={`${category.color_text_and_button_bg} font-bold`}>
+              <h2
+                style={{ color: category.color_text_and_button_bg }}
+                className={`font-bold`}
+              >
                 ${category.price}
               </h2>
               <button
-                className={`py-2 px-4 my-3 text-white font-bold rounded ${category.btn_bg}`}
+                style={{ backgroundColor: category.color_text_and_button_bg }}
+                className={`py-2 px-4 my-3 text-white font-bold rounded`}
               >
                 View Details
               </button>
@@ -54,8 +66,15 @@ const Donation = () => {
           </div>
         ))}
       </div>
-      <div className="w-40 h-20 mx-auto mt-4 mb-14">
-        <button className="bg-[#009444] px-8 py-3 rounded-lg text-white text-xl font-bold shadow-xl">
+      <div
+        className={` mx-auto w-[15%] my-28 ${
+          dataLength < appliedCategroy.length ? "" : "hidden"
+        }`}
+      >
+        <button
+          onClick={() => setDataLength(appliedCategroy.length)}
+          className="bg-[#009444] px-8 py-3 rounded-lg text-white text-xl font-bold shadow-xl"
+        >
           SEE ALL
         </button>
       </div>

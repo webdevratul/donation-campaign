@@ -1,22 +1,31 @@
 import { Link } from "react-router-dom";
 
 const Category = ({ category }) => {
-  const { id } = category;
+  const { id, color_card_bg, color_category_bg, color_text_and_button_bg } =
+    category;
 
   return (
     <Link to={`/category/${id}`}>
       <div
-        className={`rounded-lg ${category.color_card_bg} cursor-pointer shadow-md border-2`}
+        style={{
+          backgroundColor: color_card_bg,
+        }}
+        className={`rounded-lg cursor-pointer shadow-md border-2`}
       >
         <img
           className="w-full rounded-t-lg h-[300px]"
           src={category.picture}
           alt=""
         />
-
-        <div className={`p-6 ${category.color_text_and_button_bg}`}>
+        <div
+          style={{ color: color_text_and_button_bg }}
+          className={`p-6`}
+        >
           <div className="w-[90px] text-center">
-            <h3 className={`rounded my-2 ${category.color_category_bg}`}>
+            <h3
+              style={{ backgroundColor: color_category_bg }}
+              className={`rounded my-2`}
+            >
               {category.category}
             </h3>
           </div>
