@@ -67,7 +67,7 @@ const Donation = () => {
         ))}
       </div>
       <div
-        className={` mx-auto w-[15%] my-28 ${
+        className={` mx-auto w-[200px] my-28 text-center ${
           dataLength < appliedCategroy.length ? "" : "hidden"
         }`}
       >
@@ -83,5 +83,3 @@ const Donation = () => {
 };
 
 export default Donation;
-
-

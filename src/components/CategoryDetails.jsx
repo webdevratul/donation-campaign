@@ -2,6 +2,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 import "../assets/css/CategoryDetails.css";
 import { saveCategory } from "../utility/localstorege";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const CategoryDetails = () => {
   const categories = useLoaderData();
   const { id } = useParams();
@@ -11,6 +14,7 @@ const CategoryDetails = () => {
 
   const handleCategoryData = () => {
     saveCategory(idInt);
+    toast("You have Donate successfully 🥰");
   };
 
   return (
@@ -31,6 +35,7 @@ const CategoryDetails = () => {
       </button>
       <h2 className="text-2xl font-bold pb-4">{category.title}</h2>
       <p className="pb-12 text-justify">{category.description}</p>
+      <ToastContainer />
     </div>
   );
 };
