@@ -32,14 +32,14 @@ const Statistics = () => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className="flex justify-center my-8">
-        <div className="flex items-center">
+      <div className="flex justify-center flex-row my-8">
+        <div className="flex items-center flex-col md:flex-row">
           <h1>Your Donation</h1>
-          <small className="bg-[#00C49F] h-2 px-12 ml-3 text-[#0B0B0B]"></small>
+          <small className="bg-[#00C49F] h-2 px-12 md:ml-3 my-4 md:my-0 text-[#0B0B0B]"></small>
         </div>
-        <div className="flex items-center ml-6">
+        <div className="flex flex-col md:flex-row items-center ml-6">
           <h1>Total Donation</h1>
-          <small className="bg-[#FF444A] h-2 px-12 ml-3 text-[#0B0B0B]"></small>
+          <small className="bg-[#FF444A] h-2 px-12 md:ml-3 my-4 md:my-0 text-[#0B0B0B]"></small>
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ const CategoryDetails = () => {
       <button
         style={{ backgroundColor: category.color_text_and_button_bg }}
         onClick={handleCategoryData}
-        className={` text-white px-6 py-3 rounded absolute top-[86%] z-10 left-[15%] font-bold text-xl`}
+        className={` text-white px-6 py-3 rounded absolute top-[75%] md:top-[88%] z-10 left-[15%] font-bold text-xl`}
       >
         Donate ${category.price}
       </button>
