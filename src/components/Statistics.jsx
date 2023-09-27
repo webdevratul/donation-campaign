@@ -19,7 +19,7 @@ const Statistics = () => {
   const colors = ["#FF444A", "#00C49F"];
 
   return (
-    <div style={{ width: "100%", height: 500, marginTop: "200px" }}>
+    <div style={{ width: "100%", height: 400, marginTop: "200px" }}>
       <ResponsiveContainer>
         <PieChart>
           <Pie dataKey="value" data={data} label>
@@ -47,3 +47,6 @@ const Statistics = () => {
 };
 
 export default Statistics;
+
+
+
